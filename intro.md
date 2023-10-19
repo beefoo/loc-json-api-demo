@@ -1,14 +1,10 @@
-GitHub Actions with Jupyter Book
+LoC JSON API Demo
 ================================
 
-This is a small sample book built with GitHub Actions. It was built using the
-following action:
+This is a small [Jupyter notebook](https://jupyterbook.org/) that shows how to use the [Library of Congress](https://www.loc.gov/)'s [JSON API](https://www.loc.gov/apis/json-and-yaml/) using [Python](https://www.python.org/).  It demonstrates the following:
 
-```{literalinclude} .github/workflows/book.yml
-:language: yaml
-```
+1. Doing a basic API search
+2. Paginating through results
+3. Downloading, processing, and displaying images
 
-and this `requirements.txt` file:
-
-```{literalinclude} requirements.txt
-```
+If using locally, you will need to install the required Python libraries to use these notebooks: `pip install -r requirements.txt`

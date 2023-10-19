@@ -1,6 +1,6 @@
-- file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
-- file: syntax
+format: jb-book
+root: intro
+chapters:
+- file: basic
+- file: pagination
+- file: images
