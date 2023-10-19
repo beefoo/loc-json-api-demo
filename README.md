@@ -14,4 +14,6 @@ This repository is also an example of how to build and deploy a notebook on [Git
 
 The key file to have is the workflow file which can be found in `.github/workflows/book.yml`.
 
-When you push to the main branch on Github, it should automatically build your Jupyter notebook to the `gh-pages` branch that you can associated with Github Pages
+When you push to the main branch on Github, it should automatically build your Jupyter notebook to the `gh-pages` branch that you can associated with Github Pages.
+
+Ensure you update your Personal Access Token with the `workflow` scope enabled in GitHub, or create a new one, and configure your git client to use that.
