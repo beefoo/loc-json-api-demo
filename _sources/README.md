@@ -18,4 +18,4 @@ The key file to have is the workflow file which can be found in [.github/workflo
 
 1. Ensure you update your Personal Access Token with the `workflow` scope enabled in GitHub, or create a new one, and configure your git client to use that.
 2. Also on your Github project settings page, go to `Settings -> Actions -> General -> Action permissions` and select `Allow all actions and reusable workflows`. And under `Workflow permissions` select `Read and write permissions`
-3. Lastly under `Settings -> Pages`, make sure `Source -> Deploy from branch` and the branch is `gh-pages / (root)`
+3. Under `Settings -> Pages`, make sure `Source -> Deploy from branch` and the branch is `gh-pages / (root)`
