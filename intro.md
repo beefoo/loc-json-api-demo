@@ -6,5 +6,3 @@ This is a small [Jupyter notebook](https://jupyterbook.org/) that shows how to u
 1. Doing a basic API search
 2. Paginating through results
 3. Downloading, processing, and displaying images
-
-If using locally, you will need to install the required Python libraries to use these notebooks: `pip install -r requirements.txt`
