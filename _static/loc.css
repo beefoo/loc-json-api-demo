@@ -27,6 +27,7 @@ a:visited:hover {
     color: var(--text-primary-dark);
 }
 
+.prev-next-area a p.prev-next-title,
 .prev-next-area a:visited p.prev-next-title,
 nav.bd-links .current > a,
 .toc-entry a.nav-link.active {
@@ -38,8 +39,10 @@ nav.bd-links .current > a,
 nav.bd-links li > a:active,
 nav.bd-links li > a:hover,
 .toc-entry a.nav-link.active:hover,
-.toc-entry a.nav-link:active, .toc-entry a.nav-link:hover,
-.prev-next-area a:visited p.prev-next-title:hover {
+.toc-entry a.nav-link:active,
+.toc-entry a.nav-link:hover,
+.prev-next-area a:visited p.prev-next-title:hover,
+.prev-next-area a:hover p.prev-next-title:hover {
     color: var(--text-primary-dark);
 }
 
