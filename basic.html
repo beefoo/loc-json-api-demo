@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -55,6 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/loc.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -140,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -271,6 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -280,6 +284,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -350,7 +355,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>                 <span class="c1"># for making http requests</span>
-<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>   <span class="c1"># for printing pretty tables</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>             <span class="c1"># for printing the data as a table</span>
 </pre></div>
 </div>
 </div>
@@ -378,26 +383,109 @@ document.write(`
         <span class="n">value</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="k">if</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">else</span> <span class="s2">&quot;&lt;blank&gt;&quot;</span>
         <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
     <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">properties</span><span class="p">))</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">properties</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>title                                                                                                                        date        unrestricted    url
----------------------------------------------------------------------------------------------------------------------------  ----------  --------------  ------------------------------------
-Clear                                                                                                                        1910-01-01  True            https://www.loc.gov/item/94506728/
-Keating cycles. 365 days ahead of them all                                                                                   1890-01-01  True            https://www.loc.gov/item/94508248/
-The Prudent buyer selects the Shirk, the latest, neatest, and lightest bicycle in the world                                  1890-01-01  True            https://www.loc.gov/item/94510053/
-Sterling cycles. Built like a watch                                                                                          1900-01-01  True            https://www.loc.gov/item/94508251/
-Uncle Sam says &quot;Enlist for college&quot; The student loan fund is for the aid of Methodist college students /                     1917-01-01  True            https://www.loc.gov/item/97516054/
-I want you for the Navy promotion for anyone enlisting, apply any recruiting station or postmaster /                         1917-01-01  True            https://www.loc.gov/item/92510150/
-Tome                                                                                                                         1905-01-01  True            https://www.loc.gov/item/94506755/
-The past is behind us, the future is ahead. Let us all strive to make the future better and brighter than the past ever was  1918-01-01  True            https://www.loc.gov/item/91480056/
-Mechanical training--Enlist in the Air Service                                                                               1919-01-01  True            https://www.loc.gov/item/2002708933/
-Every girl pulling for victory - Victory Girls United War Work Campaign                                                      1918-01-01  True            https://www.loc.gov/item/2002719432/
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>date</th>
+      <th>unrestricted</th>
+      <th>url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clear</td>
+      <td>1910-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/94506728/</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Keating cycles. 365 days ahead of them all</td>
+      <td>1890-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/94508248/</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Prudent buyer selects the Shirk, the lates...</td>
+      <td>1890-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/94510053/</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sterling cycles. Built like a watch</td>
+      <td>1900-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/94508251/</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Uncle Sam says "Enlist for college" The studen...</td>
+      <td>1917-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/97516054/</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>I want you for the Navy promotion for anyone e...</td>
+      <td>1917-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/92510150/</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Tome</td>
+      <td>1905-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/94506755/</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>The past is behind us, the future is ahead. Le...</td>
+      <td>1918-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/91480056/</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Mechanical training--Enlist in the Air Service</td>
+      <td>1919-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/2002708933/</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Every girl pulling for victory - Victory Girls...</td>
+      <td>1918-01-01</td>
+      <td>True</td>
+      <td>https://www.loc.gov/item/2002719432/</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -430,7 +518,7 @@ Every girl pulling for victory - Victory Girls United War Work Campaign         
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -488,6 +576,7 @@ By Brian Foo
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -509,16 +598,17 @@ By Brian Foo
         <a href="https://www.loc.gov/"><img src="_static/LOC_Logo_horiz_inv.png" alt="The Library of Congress logo" title="Go to the Library of Congress homepage" /></a>
     </div>
     <div class="project-description">
-        <p>This is a project that demonstrates how to use the <a href="https://www.loc.gov/">Library of Congress</a> <a href="https://www.loc.gov/apis/json-and-yaml/">JSON API</a> using Python. <a href="https://github.com/libraryOfCongress/loc-json-api-demo" class="button small">View the code</a></p>
+        <p>This site describes technical methods, techniques, or approaches for engaging with the Library of Congress <a href="https://www.loc.gov/apis/json-and-yaml/">JSON API</a> using Python. <a href="https://github.com/libraryOfCongress/loc-json-api-demo" class="button small">View the code</a></p>
     </div>
 </header>
 <footer class="loc-footer">
-    <p>This is a project that demonstrates how to use the <a href="https://www.loc.gov/">Library of Congress</a> <a href="https://www.loc.gov/apis/json-and-yaml/">JSON API</a> using Python.</p>
+    <p>This site describes technical methods, techniques, or approaches for engaging with the <a href="https://www.loc.gov/">Library of Congress</a> <a href="https://www.loc.gov/apis/json-and-yaml/">JSON API</a> using Python.</p>
     <ul class="loc-footer-nav-list" role="navigation">
         <li><a href="https://github.com/libraryOfCongress/loc-json-api-demo">Source code</a></li>  
         <li><a href="https://www.loc.gov/">The Library of Congress</a></li>
-        <li><a href="https://loc.gov/legal">Privacy Policy</a>.</li>
-        <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Github Privacy Statement</a>.</li>
+        <li><a href="https://loc.gov/legal">Privacy Policy</a></li>
+        <li><a href="https://www.loc.gov/accessibility/">Accessibilty</a></li>
+        <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Github Privacy Statement</a></li>
         <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">License</a></li>
         <li><a href="mailto:LC-Labs@loc.gov">Contact</a></li>
     </ul>
@@ -535,8 +625,8 @@ By Brian Foo
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
