@@ -9,11 +9,11 @@ jupyter-book
 # For printing charts and graphs
 matplotlib
 
+# For printing data tables
+pandas
+
 # For reading and manipulating images
 Pillow
 
 # For downloading assets from remote URLs
 requests
-
-# For printing pretty tables
-tabulate
