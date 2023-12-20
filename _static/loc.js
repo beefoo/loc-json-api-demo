@@ -41,6 +41,35 @@ function locMain() {
     newHeader.classList.add('loc-header');
     newHeader.innerHTML = headerContent;
     document.body.prepend(newHeader);
+
+    // update "Skip To" link
+    const articleMain = document.querySelector('article[role="main"]');
+    const skipLink = document.querySelector('a.skip-link');
+    if (articleMain && skipLink) {
+        articleMain.setAttribute('id', 'article-main');
+        const articleSections = articleMain.getElementsByTagName('section');
+        if (articleSections.length > 0 && articleSections[0].hasAttribute('id')) {
+            skipLink.setAttribute('href',  `#${articleSections[0].getAttribute('id')}`);
+        } else {
+            skipLink.setAttribute('href', '#article-main');
+        }
+    }
+
+    // remove redundant main
+    const mains = document.querySelectorAll('article[role="main"]');
+    if (mains) {
+        mains.forEach((main) => {
+            main.removeAttribute('role');
+        });
+    }
+
+    // change aria-label Main to Primary
+    const labelMains = document.querySelectorAll('nav[aria-label="Main"]');
+    if (labelMains) {
+        labelMains.forEach((lmain) => {
+            lmain.setAttribute('aria-label', 'Primary');
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
