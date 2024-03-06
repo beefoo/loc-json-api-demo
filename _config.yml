@@ -23,3 +23,9 @@ html:
                 <li><a href="mailto:LC-Labs@loc.gov">Contact</a></li>
             </ul>
         </footer>
+        
+# Look here for more options: https://jupyterbook.org/en/stable/content/execute.html
+execute:
+  stderr_output: remove
+  timeout: 100 # Increase this if your scripts take longer
+  # execute_notebooks: 'off' # Turn off scripts take a very long time and you rather not re-build
